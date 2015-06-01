@@ -1,6 +1,7 @@
 #-*- coding: utf-8 -*-
 import cherrypy
 import hashlib
+import os
 from jinja2 import *
 
 __all__ = ['Administrador']
@@ -19,6 +20,6 @@ class Admin(object):
         html = env.get_template('index.html')
         return html.render()
 
-
-if __name__ == '__main__':
-    cherrypy.quickstart(Admin(), "" ,"app.conf")
+cherrypy.config.update({'server.socket_host': '0.0.0.0',})
+cherrypy.config.update({'server.socket_port': int(os.environ.get('PORT', '5000')),})
+cherrypy.quickstart(Admin(), "" ,"app.conf")
