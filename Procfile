@@ -1,1 +1,1 @@
-web: python administrador.py
+web: python app.py

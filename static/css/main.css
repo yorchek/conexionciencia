@@ -183,8 +183,8 @@ body > section {
 }
 
 .top-bar {
-  padding: 10px 0;
-  background: #191919;
+  padding: 5px 0;
+  background: rgb(0,0,0);
   border-bottom: 1px solid #222;
   line-height: 28px;
 }
@@ -266,7 +266,7 @@ input.search-form:hover {
   border-radius: 0;
   margin-bottom: 0;
   background: #151515;
-  padding: 15px 0;
+  padding: 0px 0;
   padding-bottom: 0;
 }
 
@@ -276,7 +276,7 @@ input.search-form:hover {
 
 .navbar-nav>li{
   margin-left: 35px;
-  padding-bottom: 28px;
+  padding-bottom: 13px;
 }
 
 .navbar-inverse .navbar-nav > li > a {
@@ -2525,8 +2525,21 @@ shortcodes page css
   margin-left: 15px;
 }
 
+.row .col-sm-3 a img {
+  height: 140px;
+  margin-top:-10px;
+  margin-bottom:0px;
+}
 
+@media(max-width: 330px){
+  .row .col-sm-3 a img {
+    height: 100px;
+    margin-top:-10px;
+    margin-bottom: -20px;
+  }
+}
 
-
-
-
+.col-sm-5 .center {
+  text-align: center;
+  padding-bottom:0px;
+}
