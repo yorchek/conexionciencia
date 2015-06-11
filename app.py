@@ -22,34 +22,35 @@ class ConexionCiencia(object):
         return html.render()
 
     @cherrypy.expose
-    @cherrypy.tools.allow(methods=['POST'])
+    @cherrypy.tools.allow(methods=['POST', 'GET'])
     def send_email(self, nombre=None, correo=None, asunto=None, mensaje=None):
 
+        if (asunto is None or mensaje is None):
+            raise cherrypy.HTTPRedirect("index")
+
+        if (nombre is None or nombre == ""):
+            nombre = 'Usuario Anonimo'
+        if (correo is None or correo == ""):
+            correo = 'Correo Anonimo'
+
         # Create the message
-        msg = MIMEText(mensaje)
+        msg = MIMEText('Mensaje de '+correo+ '\n\n'+ mensaje)
         msg['To'] = email.utils.formataddr(('Conexión Ciencia', 'hyaoki123@gmail.com'))
-        msg['From'] = email.utils.formataddr(('Usuario X', 'comentconexciencia@gmail.com'))
+        msg['From'] = email.utils.formataddr((nombre, correo))
         msg['Subject'] = asunto
 
         server = smtplib.SMTP("smtp.gmail.com", 587)
-        server.set_debuglevel(True) # show communication with the server
         try:
             server.ehlo()
-            print "primer ehlo"
             server.starttls()
-            print "starttls"
             server.ehlo()
-            print "segundo ehlo"
             server.login('comentconexciencia@gmail.com', 'conexion123')
-            print "login"
             server.sendmail('comentconexciencia@gmail.com', ['hyaoki123@gmail.com'], msg.as_string())
-            print "sendmail"
             server.quit()
-            print "quit"
             server.close()
-            return "Se evió el mensaje con éxito"
+            return "Si"
         except:
-            return "Falló al eviar el mensaje"
+            return "No"
 
 cherrypy.config.update({'server.socket_host': '0.0.0.0',})
 cherrypy.config.update({'server.socket_port': int(os.environ.get('PORT', '5000')),})
