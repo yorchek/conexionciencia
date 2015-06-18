@@ -1,26 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Portfolio | Corlate</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/prettyPhoto.css" rel="stylesheet">
-    <link href="css/animate.min.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
-    <link href="css/responsive.css" rel="stylesheet">
+    <title>¿Quiénes somos? | Conexión Ciencia</title>
+    
+    <!-- core CSS -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/font-awesome.min.css" rel="stylesheet">
+    <link href="static/css/animate.min.css" rel="stylesheet">
+    <link href="static/css/prettyPhoto.css" rel="stylesheet">
+    <link href="static/css/main.css" rel="stylesheet">
+    <link href="static/css/responsive.css" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
-    <![endif]-->       
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+    <![endif]--> 
+
+    <link rel="shortcut icon" href="static/images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="static/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="static/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="static/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="static/images/ico/apple-touch-icon-57-precomposed.png">
 </head><!--/head-->
 <body>
 
@@ -28,24 +31,27 @@
         <div class="top-bar">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-6 col-xs-4">
-                        <div class="top-number"><p><i class="fa fa-phone-square"></i>  +0123 456 70 90</p></div>
+                    <!-- Application logo -->
+                    <div class="col-sm-3">
+                        <a class="navbar-brand" href="index">
+                            <img src="static/images/logo.jpg" alt="logo">
+                        </a>
                     </div>
-                    <div class="col-sm-6 col-xs-8">
-                       <div class="social">
+                    <!-- Applocation name -->
+                    <div class="col-sm-5">
+                        <div class="center">
+                            <h1>Conexión Ciencia</h1>
+                            <h3>El saber se vive</h3>
+                        </div>
+                    </div>
+                    <!--  -->
+                    <div class="col-sm-3">
+                       <div class="social" style="margin-top:20px">
                             <ul class="social-share">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://www.facebook.com/conexionciencia"><i class="fa fa-facebook"></i></a></li>
                                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                                 <li><a href="#"><i class="fa fa-linkedin"></i></a></li> 
-                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                <li><a href="#"><i class="fa fa-skype"></i></a></li>
                             </ul>
-                            <div class="search">
-                                <form role="form">
-                                    <input type="text" class="search-form" autocomplete="off" placeholder="Search">
-                                    <i class="fa fa-search"></i>
-                                </form>
-                           </div>
                        </div>
                     </div>
                 </div>
@@ -61,16 +67,16 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
                 </div>
                 
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li class="active"><a href="portfolio.html">Portfolio</a></li>
-                        <li class="dropdown">  
+                        <li><a href="index">Inicio</a></li>
+                        <li class="active"><a href="#">¿Quienés somos?</a></li>
+                        <li><a href="#">Integrantes</a></li>
+                        <li><a href="#">Servicios</a></li>
+                        <li><a href="#">Eventos</a></li> 
+                        <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="blog-item.html">Blog Single</a></li>
@@ -79,204 +85,56 @@
                                 <li><a href="shortcodes.html">Shortcodes</a></li>
                             </ul>
                         </li>
-                        <li><a href="blog.html">Blog</a></li> 
-                        <li><a href="contact-us.html">Contact</a></li>                        
                     </ul>
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
         
     </header><!--/header-->
+
     <section id="portfolio">
         <div class="container">
             <div class="center">
-               <h2>Portfolio</h2>
-               <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+               <h2>¿QUIÉNES SOMOS?:</h2>
+               <p class="lead">Conexión Ciencia busca brindar nuevos conocimientos con base en la divulgación de la ciencia, haciendo del lenguaje complejo y los bastos conocimientos, divertidas actividades que cambien la visión estigmatizada de “La ciencia solo para científicos” permitiendo a la sociedad apropiarse de los conocimientos y descubrir la presencia de la ciencia en el día a día.</p>
             </div>
         
 
-            <ul class="portfolio-filter text-center">
-                <li><a class="btn btn-default active" href="#" data-filter="*">All Works</a></li>
-                <li><a class="btn btn-default" href="#" data-filter=".bootstrap">Creative</a></li>
-                <li><a class="btn btn-default" href="#" data-filter=".html">Photography</a></li>
-                <li><a class="btn btn-default" href="#" data-filter=".wordpress">Web Development</a></li>
+            <ul class="portfolio-filter text-center responsive">
+                <li><a class="esto btn btn-default" href="#" data-filter=".mision">Misión</a></li>
+                <li><a class="esto btn btn-default" href="#" data-filter=".vision">Visión</a></li>
+                <li><a class="esto btn btn-default" href="#" data-filter=".logo">Logo</a></li>
             </ul><!--/#portfolio-filter-->
 
-            <div class="row">
+            <div id="cuerpo" class="row hidden">
                 <div class="portfolio-items">
-                    <div class="portfolio-item apps col-xs-12 col-sm-4 col-md-3">
-                        <div class="recent-work-wrap">
-                            <img class="img-responsive" src="images/portfolio/recent/item1.png" alt="">
-                            <div class="overlay">
-                                <div class="recent-work-inner">
-                                    <h3><a href="#">Business theme</a></h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                    <a class="preview" href="images/portfolio/full/item1.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                                </div> 
-                            </div>
+                    <div class="portfolio-item mision col-xs-12 col-sm-4 col-md-12">
+                        <div class="center">
+                            <p class="lead">Volver inspiradora y llamativa a la ciencia demostrando que está al servicio de la sociedad. </p>
                         </div>
                     </div><!--/.portfolio-item-->
 
-                    <div class="portfolio-item joomla bootstrap col-xs-12 col-sm-4 col-md-3">
-                        <div class="recent-work-wrap">
-                            <img class="img-responsive" src="images/portfolio/recent/item2.png" alt="">
-                            <div class="overlay">
-                                <div class="recent-work-inner">
-                                    <h3><a href="#">Business theme</a></h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                    <a class="preview" href="images/portfolio/full/item2.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                                </div> 
-                            </div>
-                        </div>          
+                    <div class="portfolio-item vision col-xs-12 col-sm-4 col-md-12">
+                        <div class="center">
+                            <p class="lead">Volvernos la base para el desarrollo de la ciencia y la tecnología en futuras generaciones de México. </p>
+                        </div>
                     </div><!--/.portfolio-item-->
 
-                    <div class="portfolio-item bootstrap wordpress col-xs-12 col-sm-4 col-md-3">
-                        <div class="recent-work-wrap">
-                            <img class="img-responsive" src="images/portfolio/recent/item3.png" alt="">
-                            <div class="overlay">
-                                <div class="recent-work-inner">
-                                    <h3><a href="#">Business theme</a></h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                    <a class="preview" href="images/portfolio/full/item3.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                                </div> 
+                    <div class="portfolio-item logo col-xs-12 col-sm-4 col-md-12">
+                            <div class="row">
+                                <div class="col-md-5"><img class="img-responsive" src="static/images/logo.jpg" alt="" style="max-width:350px"></div>
+                                <div class="col-md-7">
+                                    <p class="lead">Consta de tres imágenes superpuestas: un eclipse, un observatorio y un  camino de huellas.</p>
+                                    <p class="lead">Un eclipse es la forma de representar que el pensamiento científico ha estado presente desde tiempos remotos pues ha sido un fenómeno estudiado por diversas civilizaciones y aún en la actualidad. Esto se complementa al poner el observatorio astronómico de Chichén Itzá (El caracol) perteneciente a la cultura maya una de las más sobresalientes de nuestro país y, por último un camino construido por medio de huellas para representar una invitación a la sociedad a entrar a este nicho de ciencia para poder conocerla, apreciarla y relacionarla con su entorno.<br>
+                                    En conjunto representa la interacción de la sociedad con el ámbito científico.</p>
+                                </div>
                             </div>
-                        </div>        
                     </div><!--/.portfolio-item-->
 
-                    <div class="portfolio-item joomla wordpress apps col-xs-12 col-sm-4 col-md-3">
-                        <div class="recent-work-wrap">
-                            <img class="img-responsive" src="images/portfolio/recent/item4.png" alt="">
-                            <div class="overlay">
-                                <div class="recent-work-inner">
-                                    <h3><a href="#">Business theme</a></h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                    <a class="preview" href="images/portfolio/full/item4.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                                </div> 
-                            </div>
-                        </div>           
-                    </div><!--/.portfolio-item-->
-          
-                    <div class="portfolio-item joomla html bootstrap col-xs-12 col-sm-4 col-md-3">
-                        <div class="recent-work-wrap">
-                            <img class="img-responsive" src="images/portfolio/recent/item5.png" alt="">
-                            <div class="overlay">
-                                <div class="recent-work-inner">
-                                    <h3><a href="#">Business theme</a></h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                    <a class="preview" href="images/portfolio/full/item5.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                                </div> 
-                            </div>
-                        </div>      
-                    </div><!--/.portfolio-item-->
-
-                    <div class="portfolio-item wordpress html apps col-xs-12 col-sm-4 col-md-3">
-                        <div class="recent-work-wrap">
-                            <img class="img-responsive" src="images/portfolio/recent/item6.png" alt="">
-                            <div class="overlay">
-                                <div class="recent-work-inner">
-                                    <h3><a href="#">Business theme</a></h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                    <a class="preview" href="images/portfolio/full/item6.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                                </div> 
-                            </div>
-                        </div>         
-                    </div><!--/.portfolio-item-->
-
-                    <div class="portfolio-item wordpress html col-xs-12 col-sm-4 col-md-3">
-                        <div class="recent-work-wrap">
-                            <img class="img-responsive" src="images/portfolio/recent/item7.png" alt="">
-                            <div class="overlay">
-                                <div class="recent-work-inner">
-                                    <h3><a href="#">Business theme</a></h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                    <a class="preview" href="images/portfolio/full/item7.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                                </div> 
-                            </div>
-                        </div>          
-                    </div><!--/.portfolio-item-->
-
-                    <div class="portfolio-item wordpress html bootstrap col-xs-12 col-sm-4 col-md-3">
-                        <div class="recent-work-wrap">
-                            <img class="img-responsive" src="images/portfolio/recent/item8.png" alt="">
-                            <div class="overlay">
-                                <div class="recent-work-inner">
-                                    <h3><a href="#">Business theme</a></h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                    <a class="preview" href="images/portfolio/full/item8.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                                </div> 
-                            </div>
-                        </div>          
-                    </div><!--/.portfolio-item-->
                 </div>
             </div>
         </div>
     </section><!--/#portfolio-item-->
-    
-    <section id="bottom">
-        <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Company</h3>
-                        <ul>
-                            <li><a href="#">About us</a></li>
-                            <li><a href="#">We are hiring</a></li>
-                            <li><a href="#">Meet the team</a></li>
-                            <li><a href="#">Copyright</a></li>
-                            <li><a href="#">Terms of use</a></li>
-                            <li><a href="#">Privacy policy</a></li>
-                            <li><a href="#">Contact us</a></li>
-                        </ul>
-                    </div>    
-                </div><!--/.col-md-3-->
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Support</h3>
-                        <ul>
-                            <li><a href="#">Faq</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Forum</a></li>
-                            <li><a href="#">Documentation</a></li>
-                            <li><a href="#">Refund policy</a></li>
-                            <li><a href="#">Ticket system</a></li>
-                            <li><a href="#">Billing system</a></li>
-                        </ul>
-                    </div>    
-                </div><!--/.col-md-3-->
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Developers</h3>
-                        <ul>
-                            <li><a href="#">Web Development</a></li>
-                            <li><a href="#">SEO Marketing</a></li>
-                            <li><a href="#">Theme</a></li>
-                            <li><a href="#">Development</a></li>
-                            <li><a href="#">Email Marketing</a></li>
-                            <li><a href="#">Plugin Development</a></li>
-                            <li><a href="#">Article Writing</a></li>
-                        </ul>
-                    </div>    
-                </div><!--/.col-md-3-->
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Our Partners</h3>
-                        <ul>
-                            <li><a href="#">Adipisicing Elit</a></li>
-                            <li><a href="#">Eiusmod</a></li>
-                            <li><a href="#">Tempor</a></li>
-                            <li><a href="#">Veniam</a></li>
-                            <li><a href="#">Exercitation</a></li>
-                            <li><a href="#">Ullamco</a></li>
-                            <li><a href="#">Laboris</a></li>
-                        </ul>
-                    </div>    
-                </div><!--/.col-md-3-->
-            </div>
-        </div>
-    </section><!--/#bottom-->
 
     <footer id="footer" class="midnight-blue">
         <div class="container">
@@ -296,11 +154,20 @@
         </div>
     </footer><!--/#footer-->
 
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.prettyPhoto.js"></script>
-    <script src="js/jquery.isotope.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/wow.min.js"></script>
+    <script src="static/js/jquery.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/jquery.prettyPhoto.js"></script>
+    <script src="static/js/jquery.isotope.min.js"></script>
+    <script src="static/js/main.js"></script>
+    <script src="static/js/wow.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.esto').click(function(){
+                if ($("#cuerpo").hasClass('hidden')) {
+                    $("#cuerpo").removeClass('hidden');
+                };
+            });
+        });
+    </script>
 </body>
 </html>

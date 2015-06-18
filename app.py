@@ -52,6 +52,11 @@ class ConexionCiencia(object):
         except:
             return "No"
 
+    @cherrypy.expose
+    def quienes_somos(self):
+        html = env.get_template('portfolio.html')
+        return html.render()
+
 cherrypy.config.update({'server.socket_host': '0.0.0.0',})
 cherrypy.config.update({'server.socket_port': int(os.environ.get('PORT', '5000')),})
 cherrypy.quickstart(ConexionCiencia(), "" ,"app.conf")
