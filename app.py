@@ -56,6 +56,10 @@ class ConexionCiencia(object):
     def quienes_somos(self):
         html = env.get_template('portfolio.html')
         return html.render()
+    @cherrypy.expose
+    def integrantes(self):
+        html = env.get_template('about-us.html')
+        return html.render()
 
 cherrypy.config.update({'server.socket_host': '0.0.0.0',})
 cherrypy.config.update({'server.socket_port': int(os.environ.get('PORT', '5000')),})

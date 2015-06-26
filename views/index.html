@@ -84,7 +84,7 @@
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="index.html">Inicio</a></li>
                         <li><a href="quienes_somos">¿Quienés somos?</a></li>
-                        <li><a href="#">Integrantes</a></li>
+                        <li><a href="integrantes">Integrantes</a></li>
                         <li><a href="#">Servicios</a></li>
                         <li><a href="#">Eventos</a></li> 
                         <li class="dropdown">
@@ -103,7 +103,7 @@
 		
     </header><!--/header-->
 
-    <section id="contact-page">
+    <section>
         <div class="container">
             <div class="row">
                 <div class=" col-md-6 col-md-offset-3 fb-comments" data-href="https://conexionciencia.herokuapp.com" data-numposts="5" >
@@ -118,6 +118,11 @@
                     </div>
                 </div>
            </div>
+        </div>
+    </section>
+
+    <section id="contact-page">
+        <div class="container">
             <div class="center">        
                 <h2>Deja Tu Mensaje</h2>
                 <p class="lead">Para nosotros es importante tu opinión.</p>
@@ -517,10 +522,10 @@
     <script src="static/js/main.js"></script>
     <script src="static/js/wow.min.js"></script>
     <script>
-        $(document).ready(function() {
+        
             
             // process the form
-            $('form').submit(function(event) {
+            $('#contact-form').submit(function(event) {
 
                 if($("#alert-message").text()!==""){
                     $("#alert-message").removeClass("alert-success").removeClass("alert-danger").text("").fadeIn();
@@ -541,35 +546,30 @@
                 $("#alert-message").addClass("alert-info").append("<span class=\"glyphicon glyphicon-refresh glyphicon-refresh-animate\"></span> Enviando...");
 
                 // process the form
-                $.ajax({
-                    type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
-                    url         : 'send_email', // the url where we want to POST
-                    data        : formData, // our data object
-                    dataType    : "text" // type of data return
-                })
+                var posting = $.post( 'send_email', formData );
                     // using the done promise callback
-                    .done(function(data) {
+                posting.done(function(data) {
                         $("#alert-message").removeClass("alert-info").text("");
 
                         // alert the message gotten by the url
                         if (data==="Si") {
                             //reload the section used
-                            $("body").load(location.href, function(){
-                                $("#alert-message").addClass("alert-success").append("Tu mensaje ha sido enviado, ¡Gracias!.");
-                                $("#alert-message").delay(4000).fadeOut(4000);
-                            });
+                            $('input[name=nombre]').val(""),
+                            $('input[name=correo]').val(""),
+                            $('input[name=asunto]').val(""),
+                            $('textarea[name=mensaje]').val("")
+                            $("#alert-message").addClass("alert-success").append("Tu mensaje ha sido enviado, ¡Gracias!.");
+                            $("#alert-message").delay(4000).fadeOut(4000);
                         } else{
-                            $("body").load(location.href, function(){
-                                $("#alert-message").addClass("alert-danger").append("<strong>Tu mensaje no se ha podido enviar</strong>, intenta nuevamente.");
-                                $('input[name=nombre]').val(formData.nombre);
-                                $('input[name=correo]').val(formData.correo);
-                                $('input[name=asunto]').val(formData.asunto);
-                                $('textarea[name=mensaje]').val(formData.mensaje);
-                            });
+                            $("#alert-message").addClass("alert-danger").append("<strong>Tu mensaje no se ha podido enviar</strong>, intenta nuevamente.");
+                            $('input[name=nombre]').val(formData.nombre);
+                            $('input[name=correo]').val(formData.correo);
+                            $('input[name=asunto]').val(formData.asunto);
+                            $('textarea[name=mensaje]').val(formData.mensaje);
                         }
                     });
             });
-        });
+        
     </script>
 </body>
 </html>
