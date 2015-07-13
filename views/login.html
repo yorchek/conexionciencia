@@ -58,25 +58,12 @@
     <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
     <script src="static/js/jquery.js"></script>
     <script src="static/js/bootstrap.min.js"></script>
-    <script src="static/js/jquery.cookie.js"></script>
-    <script>
-      $(window).load(function(){
-        var remember = $.cookie('remember');
-        if ( remember == 'true' ) {
-          var username = $.cookie('username');
-          var password = $.cookie('password');
-          // autofill the fields
-          $('input[name=inputEmail]').val(username);
-          $('input[name=inputPassword]').val(password);
-        }
-      });
-    </script>
     <script>
             // process the form
             $('#login-form').submit(function(event) {
 
                 if($("#alert-message").text()!==""){
-                    $("#alert-message").removeClass("alert-success").removeClass("alert-danger").text("").fadeIn();
+                    $("#alert-message").removeClass("alert-danger").text("").fadeIn();
                 }
 
                 // stop the form from submitting the normal way and refreshing the page
@@ -88,8 +75,6 @@
                     'correo'  : $('input[name=inputEmail]').val(),
                     'contrasena'  : $('input[name=inputPassword]').val()
                 };
-                
-                $("#alert-message").addClass("alert-info").append("<span class=\"glyphicon glyphicon-refresh glyphicon-refresh-animate\"></span> Verificando...");
 
                 if ($('input[name=remember]').attr('checked')) {
                   var username = $('input[name=inputEmail]').val();
@@ -109,7 +94,6 @@
                 var posting = $.post( 'dologin', formData );
                     // using the done promise callback
                 posting.done(function(data) {
-                        $("#alert-message").removeClass("alert-info").text("");
 
                         // alert the message gotten by the url
                         if (data==="Si") {
