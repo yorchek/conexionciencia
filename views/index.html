@@ -84,7 +84,7 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="index">Inicio</a></li>
-                        <li><a href="quienes_somos">¿Quienés somos?</a></li>
+                        <li><a href="quienes_somos">¿Quiénes somos?</a></li>
                         <li><a href="integrantes">Integrantes</a></li>
                         <li><a href="#">Servicios</a></li>
                         <li><a href="#">Eventos</a></li> 
@@ -104,23 +104,23 @@
 		
     </header><!--/header-->
 
-    <section>
+    <section id="comentarios-facebook">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
                     <div class="fb-comments" data-href="https://conexionciencia.herokuapp.com" data-numposts="5" data-numposts="5" data-width="100%" data-colorscheme="light">
                     </div>
                 </div>
-                <div class="fb-post" data-href="https://www.facebook.com/media/set/?set=a.367889060076357.1073741832.348304252034838&amp;type=3" data-width="400">
-                    <div class="fb-xfbml-parse-ignore">
-                        <blockquote cite="https://www.facebook.com/media/set/?set=a.367889060076357.1073741832.348304252034838&amp;type=3">
-                            <p>Gracias a Grupo Nahuales por este hermoso evento as&#xed; como a Ciinvi pero sobre todo a aquellos peque&#xf1;os que nos acompa&#xf1;aron
-                            </p>
-                            Posted by <a href="https://www.facebook.com/conexionciencia">Conexión Ciencia.</a> on <a href="https://www.facebook.com/media/set/?set=a.367889060076357.1073741832.348304252034838&amp;type=3">Monday, June 15, 2015</a>
-                        </blockquote>
-                    </div>
-                </div>
-           </div>
+            </div>
+        </div>
+    </section>
+    <section id="facebook-anuncios">
+        <div class="container">
+            {% for elemento in elementos %}
+            <div class="col-sm-4">
+                {{ elemento[0].decode('utf-8') }}
+            </div>
+            {% endfor %}
         </div>
     </section>
 

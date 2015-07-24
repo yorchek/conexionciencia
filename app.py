@@ -1,4 +1,4 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 import cherrypy
 import hashlib
 import os
@@ -19,7 +19,9 @@ class ConexionCiencia(object):
     @cherrypy.expose
     def index(self):
         html = env.get_template('index.html')
-        return html.render()
+        c = Conexion()
+        r = c.consultar("select contenido from defacebook;");
+        return html.render(elementos = r)
 
     @cherrypy.expose
     @cherrypy.tools.allow(methods=['POST', 'GET'])

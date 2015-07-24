@@ -33,8 +33,10 @@
 
     <div class="container">
       <div class="row contact-wrap">
-        <form id="login-form" class="form-signin" name="login-form" method="post" action="/dologin">
+        <form id="login-form" class="form-signin" name="login-form" method="post" action="/dologin" autocomplete="on">
           <h2 class="form-signin-heading">Inicio de Sesión</h2>
+
+          <div id="alert-message" class="alert" hidden></div>
 
           <label for="inputEmail" class="sr-only">Correo</label>
           <input type="email" name="inputEmail" id="inputEmail" class="form-control" placeholder="Correo electronico" maxlength="50" required autofocus autocomplete="true">
@@ -45,11 +47,6 @@
           <br>
 
           <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
-
-          <br>
-          <br>
-
-          <div id="alert-message" class="alert"></div>
         </form>
       </div>
     </div> <!-- /container -->
@@ -63,7 +60,7 @@
       $('#login-form').submit(function(event) {
 
         if($("#alert-message").text()!==""){
-          $("#alert-message").removeClass("alert-danger").text("").fadeIn();
+          $("#alert-message").removeClass("alert-danger").text("").fadeOut();
         }
 
         // stop the form from submitting the normal way and refreshing the page
@@ -87,7 +84,7 @@
           location.href = "inicio";
         } else{
           // alert: wrong login
-          $("#alert-message").addClass("alert-danger").append("Por favor verifica tus datos.");
+          $("#alert-message").addClass("alert-danger").append("Por favor verifica tus datos.").fadeIn();
         }
       });
     });
