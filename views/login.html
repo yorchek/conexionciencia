@@ -59,61 +59,38 @@
     <script src="static/js/jquery.js"></script>
     <script src="static/js/bootstrap.min.js"></script>
     <script>
-            // process the form
-            $('#login-form').submit(function(event) {
+      // process the form
+      $('#login-form').submit(function(event) {
 
-                if($("#alert-message").text()!==""){
-                    $("#alert-message").removeClass("alert-danger").text("").fadeIn();
-                }
+        if($("#alert-message").text()!==""){
+          $("#alert-message").removeClass("alert-danger").text("").fadeIn();
+        }
 
-                // stop the form from submitting the normal way and refreshing the page
-                event.preventDefault();
+        // stop the form from submitting the normal way and refreshing the page
+        event.preventDefault();
 
-                // get the form data
-                // there are many ways to get this data using jQuery (you can use the class or id also)
-                var formData = {
-                    'correo'  : $('input[name=inputEmail]').val(),
-                    'contrasena'  : $('input[name=inputPassword]').val()
-                };
+        // get the form data
+        // there are many ways to get this data using jQuery (you can use the class or id also)
+        var formData = {
+          'correo'  : $('input[name=inputEmail]').val(),
+          'contrasena'  : $('input[name=inputPassword]').val()
+        };
 
-                if ($('input[name=remember]').attr('checked')) {
-                  var username = $('input[name=inputEmail]').val();
-                  var password = $('input[name=inputPassword]').val();
-                  // set cookies to expire in 14 days
-                  $.cookie('username', username, { expires: 14 });
-                  $.cookie('password', password, { expires: 14 });
-                  $.cookie('remember', true, { expires: 14 });
-                } else {
-                  // reset cookies
-                  $.cookie('username', null);
-                  $.cookie('password', null);
-                  $.cookie('remember', null);
-                }
+        // process the form
+        var posting = $.post( 'dologin', formData );
+        // using the done promise callback
+        posting.done(function(data) {
 
-                // process the form
-                var posting = $.post( 'dologin', formData );
-                    // using the done promise callback
-                posting.done(function(data) {
-
-                        // alert the message gotten by the url
-                        if (data==="Si") {
-                            //redirect to the page
-                            location.href = "inicio";
-                        } else{
-                            // alert: wrong login
-                            $("#alert-message").addClass("alert-danger").append("Por favor verifica tus datos.");
-                            //Read from cookies
-                            var remember = $.cookie('remember');
-                            if ( remember == 'true' ) {
-                              var username = $.cookie('username');
-                              var password = $.cookie('password');
-                              // autofill the fields
-                              $('input[name=inputEmail]').val(username);
-                              $('input[name=inputPassword]').val(password);
-                            }
-                        }
-                    });
-            });
+        // alert the message gotten by the url
+        if (data==="Si") {
+          //redirect to the page
+          location.href = "inicio";
+        } else{
+          // alert: wrong login
+          $("#alert-message").addClass("alert-danger").append("Por favor verifica tus datos.");
+        }
+      });
+    });
         
     </script>
   </body>
