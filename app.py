@@ -18,6 +18,11 @@ class ConexionCiencia(object):
 
     @cherrypy.expose
     def index(self):
+        html = env.get_template('coming-soon.html')
+        return html.render()
+
+    @cherrypy.expose
+    def inicio(self):
         html = env.get_template('index.html')
         c = Conexion()
         r = c.consultar("select contenido from defacebook;");
