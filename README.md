@@ -1,3 +1,4 @@
-# conexionciencia
- Desarrollo de la página Conexión Ciencia
- Se desarrolla sobre python, cherrypy, jinja2, psycopg2 y postgresql.
+# Ruido Vivo
+ Se desarrolla sobre python, cherrypy, sqlalchemy, jinja2, psycopg2, mako y postgresql.
+ 
+ ruidovivo.herokuapp.com
